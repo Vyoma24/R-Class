@@ -1,0 +1,20 @@
+# Assign Value to assignment 2
+
+assignment2 <- c(16, 18, 14, 22, 27, 17, 19, 17, 17, 22, 20, 22)
+
+# defining a function called myMean having assignment 2 as argument.
+
+myMean <- function(assignment2) { return(sum(assignment)/length(someData)) }
+
+# Checking if the function works or not
+myMean(assignment2)
+Error in myMean(assignment2) : Object 'assignment' not found
+
+# Correct the function.
+
+myMean <- function(assignment2) { return(sum(assignment2)/length(assignment2)) }
+
+# Check if the function works
+
+myMean(assignment2)
+19.25
