@@ -11,7 +11,7 @@ Patient9 <- c("0.9","135","NA","high","high")
 Patient10 <- c("0.2","176","bad","high","high")
 
 # Creating Matrix and turing into dataframe
-patients <-matrix(c(Patient.1,Patient.2,Patient.3,Patient.4,Patient.5,Patient.6,Patient.7,Patient.8,Patient.9,Patient.10),ncol=5,byrow=T)
+patients <-matrix(c(Patient1,Patient2,Patient3,Patient4,Patient5,Patient6,Patient7,Patient8,Patient9,Patient10),ncol=5,byrow=T)
 patients.dt <-data.frame(patients)
 
 #Creating Vectors
@@ -23,10 +23,10 @@ final <- ifelse(patients[,5] =="low",1,ifelse(patients[,5] =="high",0,NA))
 
 #Giving column names to patient.data
 patients.data <- data.frame(frequency,bp,first,final)
-rownames(patients.num) <- rownames(patients)
+rownames(patients.data) <- rownames(patients)
 
 Plotting boxplot of doctor's opinion vs Blood pressure of patient
-boxplot(patients.num$bp~patients.num$first, main ="Boxplot of Doctor's rating vs Blood pressure", ylab= "BP measurement", names=c("0","1"))
+boxplot(patients.data$bp~patients.data$first, main ="Boxplot of Doctor's rating vs Blood pressure", ylab= "BP measurement", names=c("0","1"))
 
 Plotting histogram
-hist(patients.num[,1], col="red" ,main="Patient visit frequency", xlab =" Visit frequency in past 12 months", ylab="patients")
+hist(patients.data[,1], col="red" ,main="Patient visit frequency", xlab =" Visit frequency in past 12 months", ylab="patients")
