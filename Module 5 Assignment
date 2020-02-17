@@ -1,0 +1,8 @@
+Use runif command to create matrix
+ A <- matrix(runif(100, 1, 100), nrow =10)
+ 
+ Check the determinanat of A using det()
+ det(A)
+
+Use solve() to find inverse of A
+solve(A)
