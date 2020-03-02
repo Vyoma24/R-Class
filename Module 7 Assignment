@@ -1,7 +1,6 @@
 data("CO2")
 
 print("CO2")
-summary("CO2")
 plot("CO2")
 
 mean("CO2")
