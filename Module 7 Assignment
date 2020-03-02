@@ -1,0 +1,35 @@
+data("CO2")
+
+print("CO2")
+summary("CO2")
+plot("CO2")
+
+mean("CO2")
+
+CO2_s3 = function(p,ty,tt,c,u) {
+  CO2 = list(Plant = p, Type = t, Treatment = tt, conc = c, uptake = u)
+  class(CO2) <- "CO2_s3"
+  CO2_s3
+}
+print.CO2_s3<- function(CO2) {
+  cat("conc", CO2$conc, "\n")
+  cat("update ", CO2$update, "\n")
+}
+
+setClass("CO2_S4)",
+         representation(
+           Plant = "character",
+           Type = "character",
+           Treatment = "character",
+            conc="numeric",
+           update="numeric"))
+           
+setMethod("show", "CO2_S4",
+          function(object) {
+            cat("Plant", object@Plant, "\n")
+            cat("Type", object@Type, "\n")
+            cat("Treatment", object@Treatment, "\n")
+            cat("conc", object@conc, "\n")
+            cat("update", object@update, "\n")
+          }
+)
