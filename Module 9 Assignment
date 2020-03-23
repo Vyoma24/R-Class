@@ -8,7 +8,7 @@ library(ggplot2)
 height <- read.table(file.choose(),header=T,sep=",")
 
 #Plot boxplot using the built in function
-boxplot(height$weight,data=height, main="Height vs Weight",xlab="Weight", ylab="Height")
+boxplot(height~weight,data=height, main="Height vs Weight",xlab="Weight", ylab="Height")
 
 #Plot boxplot using lattice package
 bwplot(height~weight,data=height, main="Height vs Weight",xlab="Weight", ylab="Height")
