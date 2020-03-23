@@ -5,15 +5,16 @@ library(lattice)
 library(ggplot2)
 
 #Import data from CSV file into R
-height <- read.table(file.choose(),header=T,sep=",")
+growth<- read.table(file.choose(),header=T,sep=",")
 
 #Plot boxplot using the built in function
-boxplot(height~weight,data=height, main="Height vs Weight",xlab="Weight", ylab="Height")
+boxplot(len~supp*dose, data=growth,col=(c("red","blue")),main="Tooth Growth", xlab="Suppliment and Dose", ylab = "length")
+
+#Convert the dataset into varaible factors
+growth$dose <- as.factor(growth$dose)
 
 #Plot boxplot using lattice package
-bwplot(height~weight,data=height, main="Height vs Weight",xlab="Weight", ylab="Height")
+bwplot(len ~ dose,  data = growth,xlab = "Dose", ylab = "Length")
 
 #Plot boxplot using ggplot2 package
- qplot(height, weight, data=height, geom=c("boxplot", "jitter"),
-+       fill= height, main="Height vs Weight",
-+       xlab="Height", ylab="Weight")
+ ggplot(ToothGrowth, aes(x=dose, y=len, fill=dose)) + geom_boxplot()+theme_classic()
