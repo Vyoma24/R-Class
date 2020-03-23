@@ -1,0 +1,19 @@
+#Install required packages
+install.packages("lattice")
+install.packages("ggplot2")
+library(lattice)
+library(ggplot2)
+
+#Import data from CSV file into R
+height <- read.table(file.choose(),header=T,sep=",")
+
+#Plot boxplot using the built in function
+boxplot(height$weight,data=height, main="Height vs Weight",xlab="Weight", ylab="Height")
+
+#Plot boxplot using lattice package
+bwplot(height~weight,data=height, main="Height vs Weight",xlab="Weight", ylab="Height")
+
+#Plot boxplot using ggplot2 package
+ qplot(height, weight, data=height, geom=c("boxplot", "jitter"),
++       fill= height, main="Height vs Weight",
++       xlab="Height", ylab="Weight")
