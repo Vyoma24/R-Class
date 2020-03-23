@@ -17,4 +17,4 @@ growth$dose <- as.factor(growth$dose)
 bwplot(len ~ dose,  data = growth,xlab = "Dose", ylab = "Length",main="Effect of VitC on Tooth Growth")
 
 #Plot boxplot using ggplot2 package
- ggplot(ToothGrowth, aes(x=dose, y=length,main="Effect of VitC on Tooth Growth", fill=dose)) + geom_boxplot()+theme_classic()
+ ggplot(ToothGrowth, aes(x=dose, y=len, fill=dose)) + geom_boxplot()+theme_classic()+ggtitle("Effect of VitC on ToothGrowth")
