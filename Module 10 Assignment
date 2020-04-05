@@ -2,9 +2,9 @@ Package: Sortingdata
 Type: package
 Title: Sorts FinTech data into usabel format
 Version: 0.1.0
-Author: VSheth
-Maintainer: vyomast@gmail.com
+Authors@R: "Vyoma, Sheth <vyomast@gmail.com> [aut, cre]"
 Description: Transforms the data provided by FinTech which is mostly categorical into usabel format.
+Depends: R (>= 3.1.2)
 License: MIT
 Encoding: UTF-8
 LazyData: true
